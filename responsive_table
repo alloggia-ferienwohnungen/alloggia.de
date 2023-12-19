@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+</head>
+<style>
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    text-align: right;
+  }
+  
+  table td::before {
+    content: attr(data-label);
+    float: left;
+  }
+}
+
+</style>
+<body>
+<table>
+  <caption>Statement Summary</caption>
+  <thead>
+    <tr>
+      <th scope="col">Account</th>
+      <th scope="col">Due Date</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Period</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Account">Visa - 3412</td>
+      <td data-label="Due Date">04/01/2016</td>
+      <td data-label="Amount">$1,190</td>
+      <td data-label="Period">03/01/2016 - 03/31/2016</td>
+    </tr>
+	<tr>
+      <td data-label="Account">Master Card - 3222</td>
+      <td data-label="Due Date">04/04/2018</td>
+      <td data-label="Amount">$2,390</td>
+      <td data-label="Period">03/01/2016 - 03/31/2016</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+
+</html> 
