@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang=de>
+<head>
+  <meta charset=UTF-8>
+  <title>Document</title>
+  <script src=https://code.jquery.com/jquery-3.4.1.min.js></script>
+   <script>
+ function Sprechen() {
+    var vTextArea = document.getElementById('vTextzusprechen');
+    var vSprachEinstellungen = new SpeechSynthesisUtterance();
+
+    vSprachEinstellungen.text = vTextArea.value;
+    vSprachEinstellungen.lang = "de-DE";
+    vSprachEinstellungen.rate = 1;
+    vSprachEinstellungen.pitch = 1;
+    window.speechSynthesis.speak(vSprachEinstellungen);
+
+}
+  </script>  
+</head>
+<body>
+ <textarea name="vTextzusprechen" id="vTextzusprechen" cols="30" rows="10">
+   Sehr geehrte Damen und Herren...
+ </textarea>
+ <input id="trigger_me" type="button" value="Sprechen" accesskey="s" onclick="Sprechen()" title="Der eingegebene Text wird gesprochen" style="padding:10px;width:90%; font-size:120%;">
+
+ </body>
+</html>
