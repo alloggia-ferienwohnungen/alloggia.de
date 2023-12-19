@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+	<title>Test toggle rows</title>
+	
+	<style>
+		.togglerow {
+			cursor: pointer; 
+			background-color: #696969; 
+			color: white;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 3px 6px;
+		}
+		.togglerow:hover {
+		background-color: #f7f7f7;
+		color: black;
+}
+	</style>
+  </head>
+<body>
+
+<script>
+function toggle(nr) {
+ if(document.getElementById(nr).style.display=='none' ){
+   document.getElementById(nr).style.display = '';
+ }else{
+   document.getElementById(nr).style.display = 'none';
+ }
+}
+</script>
+
+
+<table>
+	<thead>
+	</thead>
+	<tbody class="maintable">
+		<tr>
+			<td onClick="toggle(1);" class="togglerow">&#9660;&nbsp;Eckdaten der Wohnung</td>
+		</tr>
+			<tbody id="1" style="display:none">
+				<tr>
+					<td>Hide this</td>
+				</tr>
+				<tr>
+					<td>Hide this too</td>
+				</tr>
+				<tr>
+					<td>... and hide this</td>
+				</tr>
+			</tbody>
+		<tr>
+			<td onClick="toggle(2);" class="togglerow">&#9660;&nbsp;Preise und Konditionen</td>
+		</tr>	
+			<tbody id="2" style="display:none">
+				<tr>
+					<td>Hide not</td>
+				</tr>
+				<tr>
+					<td>Hide not too</td>
+				</tr>
+				<tr>
+					<td>... and not hide this</td>
+				</tr>
+			</tbody>
+		<tr><td>&nbsp;</td></tr>		
+	</tbody>
+</table>
+
+</body>
+</html>
